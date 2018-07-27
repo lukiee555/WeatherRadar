@@ -8,9 +8,9 @@ public class Wind {
 
     public void setSpeed(double speed) { this.speed = speed; }
 
-    private int deg;
+    private double deg;
 
-    public int getDeg() { return this.deg; }
+    public double getDeg() { return this.deg; }
 
     public void setDeg(int deg) { this.deg = deg; }
 

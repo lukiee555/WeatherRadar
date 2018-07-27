@@ -94,9 +94,9 @@ public class TodayWeatherFragment extends Fragment {
                     public void accept(WeatherResult weatherResult) throws Exception {
 
                         //Load Image
-                        Picasso.get().load(new StringBuilder("https://openweathermap.org/img/w/01n.png")
+                        Picasso.get().load(new StringBuilder("https://openweathermap.org/img/w/")
                                      .append(weatherResult.getWeather().get(0).getIcon())
-                                     .append(".png").toString()).placeholder(R.mipmap.ic_launcher_round).into(imageViewWeather);
+                                     .append(".png").toString()).into(imageViewWeather);
 
 
                         //Load Information
@@ -126,4 +126,9 @@ public class TodayWeatherFragment extends Fragment {
         );
     }
 
+    @Override
+    public void onStop() {
+        compositeDisposable.clear();
+        super.onStop();
+    }
 }

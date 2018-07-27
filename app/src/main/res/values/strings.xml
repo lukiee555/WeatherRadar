@@ -7,4 +7,6 @@
     <string name="temperature">14 C</string>
     <string name="description">description</string>
     <string name="datetime">DateTime</string>
+    <string name="_5_days_weather_forecast">5 Days Weather Forecast</string>
+    <string name="weekdayname">Wednesday</string>
 </resources>

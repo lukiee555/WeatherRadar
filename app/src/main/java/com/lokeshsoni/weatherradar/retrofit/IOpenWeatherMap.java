@@ -1,5 +1,6 @@
 package com.lokeshsoni.weatherradar.retrofit;
 
+import com.lokeshsoni.weatherradar.model.WeatherForecastResult;
 import com.lokeshsoni.weatherradar.model.WeatherResult;
 
 
@@ -14,6 +15,10 @@ public interface IOpenWeatherMap {
                                                   @Query("lon") String lon,
                                                   @Query("appid") String appid,
                                                   @Query("units") String units);
-
+    @GET("forecast")
+    Observable<WeatherForecastResult>  getForecastWeatherByLatLng(@Query("lat") String lat,
+                                                                  @Query("lon") String lon,
+                                                                  @Query("appid") String appid,
+                                                                  @Query("units") String units);
 
 }
