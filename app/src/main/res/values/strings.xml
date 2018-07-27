@@ -3,4 +3,8 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Today Weather Fragment</string>
+    <string name="weather_in_london_gb">Weather in London,GB</string>
+    <string name="temperature">14 C</string>
+    <string name="description">description</string>
+    <string name="datetime">DateTime</string>
 </resources>

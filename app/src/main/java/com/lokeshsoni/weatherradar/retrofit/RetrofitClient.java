@@ -1,7 +1,7 @@
 package com.lokeshsoni.weatherradar.retrofit;
 
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
@@ -13,7 +13,7 @@ public class RetrofitClient {
             instance = new Retrofit.Builder()
                         .baseUrl("https://api.openweathermap.org/data/2.5/ ")
                         .addConverterFactory(GsonConverterFactory.create())
-                        .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                         .build();
         return instance;
 

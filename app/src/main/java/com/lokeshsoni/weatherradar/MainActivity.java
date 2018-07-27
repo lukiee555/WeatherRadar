@@ -12,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.google.android.gms.common.internal.service.Common;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -24,7 +23,7 @@ import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.lokeshsoni.weatherradar.adapter.ViewPagerAdapter;
-import com.lokeshsoni.weatherradar.common.common;
+import com.lokeshsoni.weatherradar.common.Common;
 
 import java.util.List;
 
@@ -87,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
                 super.onLocationResult(locationResult);
 
-                common.curruntLocation = locationResult.getLastLocation();
+                Common.curruntLocation = locationResult.getLastLocation();
 
                 viewPager = findViewById(R.id.viewpager);
 

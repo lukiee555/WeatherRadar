@@ -1,16 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:gravity="center_horizontal"
     tools:context=".TodayWeatherFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/weatherPanel"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textCityName"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_in_london_gb"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageWeather"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@mipmap/ic_launcher"
+                />
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/textTemprature"
+                android:textColor="@color/colorPrimary"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/temperature"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textDescription"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"/>
+
+        <TextView
+            android:id="@+id/textDateTime"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/datetime"/>
+
+        <TableLayout
+            android:background="@drawable/border"
+            android:layout_marginTop="10dp"
+            android:stretchColumns="*"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:background="@drawable/cell"
+                    android:text="Wind"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:id="@+id/textWind"
+                    android:text="Speed: 1 Deg: 1"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:background="@drawable/cell"
+                    android:text="Pressure"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:id="@+id/textPressure"
+                    android:text="1013.75 hpa"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:background="@drawable/cell"
+                    android:text="Humidity"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:id="@+id/textHumidity"
+                    android:text="100%"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:background="@drawable/cell"
+                    android:text="Sunrise"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:id="@+id/textSunrise"
+                    android:text="11:00"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:background="@drawable/cell"
+                    android:text="Sunset"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:id="@+id/textSunset"
+                    android:text="18:00"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:background="@drawable/cell"
+                    android:text="Geo Cords"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+                <TextView
+                    android:layout_marginLeft="8dp"
+                    android:layout_column="1"
+                    android:id="@+id/textGeoCords"
+                    android:text="[30.0,-81.0]"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"/>
+            </TableRow>
+
+
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
         android:layout_centerInParent="true"
-        android:textSize="30sp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:indeterminate="true"
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>
